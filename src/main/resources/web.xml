@@ -1,0 +1,21 @@
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                      https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+    <servlet>
+        <servlet-name>GeoIpServlet</servlet-name>
+        <servlet-class>net.twentyonesolutions.geoip.GeoIpServlet</servlet-class>
+        <init-param>
+            <param-name>cache-spec</param-name>
+            <param-value>maximumSize=8192</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>GeoIpServlet</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+
+</web-app>
